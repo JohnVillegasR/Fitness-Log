@@ -1,0 +1,30 @@
+{% extends "layout_login.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+<h1 id="aa">Workouts</h1>
+<table class="table">
+    <thead>
+        <th>Exercise</th>
+        <th>Weight</th>
+        <th>Sets</th>
+        <th>Reps</th>
+        <th>Time</th>
+    </thead>
+    <tbody>
+        {% for log in logs %}
+        <tr>
+            <td>{{ log.name }}</td>
+            <td>{{ log.weight }}kg</td>
+            <td>{{ log.sets }}</td>
+            <td>{{ log.reps }}</td>
+            <td>{{ log.time }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "layout_login.html" %}
+
+{% block title %}
+    workout
+{% endblock %}
+
+{% block main %}
+
+    <form action="/routine" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="name" name="name" placeholder="Name of exercise" type="text">
+        </div>
+        <div class="mb-3">
+            <input  id="weight" name="weight" placeholder="Weight in lb" type="text">
+        </div>
+        <div class="mb-3">
+            <input  id="sets" name="sets" placeholder="Sets" type="text">
+        </div>
+        <div class="mb-3">
+            <input  id="reps" name="reps" placeholder="Reps" type="text">
+        </div>
+        <button type="Finish exercise" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "layout_login.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+<h1>Pr</h1>
+    <form action="/analisis" method="post">
+        <div class="mb-3">
+        <select name="match">
+            <option value="">Select exercise</option>
+            {% for log in logs %}
+                <option value="{{ log.name}}">{{ log.name}}</option>
+            {% endfor %}
+        </select>
+
+        <button class="btn btn-primary" type="submit">Search for analisis</button>
+    </div>
+
+    </form>
+
+    {% for o in on %}
+        <h2>Current PR: {{ o.weight }}lb</h2>
+    {% endfor %}
+    <h3>Calculated 1 Rep Max is</h3>
+    {% if pr %}
+        <h3>{{ pr }}lb</h3>
+    {% else %}
+    {% for o in on %}
+    <h3>{{ o.weight }}</h3>
+    {% endfor %}
+    {% endif %}
+    {% if more is not none %}
+        {% if more == 0 %}
+        <p>You still use the same weight as when you started, you can get it up!!</p>
+        {% else %}
+        <p>Your strenght has elevated on this exercise by {{ more }}lb </p>
+        {% endif %}
+    {% endif %}
+    {% if less is not none %}
+        <p>You have regressed on this exercise by {{ less }}lb</p>
+    {% endif %}
+    {% if rep_more is not none %}
+        {% if rep_more == 0 %}
+        <p>You still do the same number of reps as when you started with this exercise</p>
+        {% else %}
+        <p>the number of reps you do in this exercise has gone up by {{ rep_more}} </p>
+        {% endif %}
+    {% endif %}
+    {% if rep_less is not none %}
+        <p>The number of reps you do on this exercise have decrese by {{ rep_less }}</p>
+    {% endif %}
+
+
+
+
+{% endblock %}
