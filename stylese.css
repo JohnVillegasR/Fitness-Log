@@ -1,0 +1,19 @@
+body{
+    background-color: #0c243c;
+}
+#pa{
+    background-color: #0c243c;
+}
+.navbar-nav{
+    color: #c9d1d5;
+}
+.red{
+    color: #c9d1d5;
+    text-align: center;
+}
+#log,#lag,#lig{
+    color: #c9d1d5;
+}
+.navbar-brand{
+    text-align:center;
+}
